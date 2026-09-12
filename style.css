@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f1e5;
+  color: #4a3e3d;
+  overflow-x: hidden;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* 1. الظرف */
+.envelope-wrapper {
+  text-align: center;
+  cursor: pointer;
+}
+
+.envelope {
+  width: 260px;
+  height: 170px;
+  background: #e8ded1;
+  border: 1px solid #d4c5b3;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.envelope:hover {
+  transform: translateY(-5px);
+}
+
+.stamp {
+  font-size: 24px;
+}
+
+.tap-text {
+  margin-top: 15px;
+  font-style: italic;
+  color: #8c7b70;
+}
+
+/* 2. انيميشن الورد */
+.flower-bloom {
+  font-size: 80px;
+  animation: bloom 1.5s ease-out forwards;
+}
+
+@keyframes bloom {
+  0% { transform: scale(0.2); opacity: 0; }
+  50% { transform: scale(3); opacity: 1; }
+  100% { transform: scale(5); opacity: 0; }
+}
+
+/* 3. الشاشة الرئيسية */
+.container {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  padding: 20px;
+  width: 100%;
+}
+
+.cassette-card {
+  background: #fcf9f2;
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.header-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #a09288;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #3b322c;
+}
+
+.cassette-tape {
+  height: 140px;
+  background: #d9e3d0;
+  border-radius: 12px;
+  border: 2px solid #b8c4ae;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.reel {
+  width: 50px;
+  height: 50px;
+  border: 4px dashed #7a8a6e;
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  background: #f4eee4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.num {
+  font-weight: bold;
+  margin-right: 15px;
+  color: #8c7b70;
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  display: block;
+  font-weight: 600;
+}
+
+.artist {
+  font-size: 12px;
+  color: #7d6e65;
+}
+
+.play-btn {
+  background: #889c7c;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.status-bar {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #6b5c53;
+}
+
+/* الملاحظة الجانبية */
+.liner-note {
+  flex: 0.8;
+  background: #fcf9f2;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #a09288;
+}
+
+.instruction {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.finish-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background: #4a5d4e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+  position: fixed;
+  left: -320px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #f7f1e5;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  transition: left 0.4s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.widget {
+  background: #fcf9f2;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.widget img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  background: #f0d5d5;
+  border: none;
+  border-radius: 20px;
+  color: #5c3b3b;
+  cursor: pointer;
+}
