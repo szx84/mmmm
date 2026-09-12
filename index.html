@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Songs For You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- شاشة الظرف الأولى -->
+  <div id="envelope-screen" class="screen active">
+    <div class="envelope-wrapper" id="envelope">
+      <div class="envelope">
+        <div class="stamp">🌸</div>
+      </div>
+      <p class="tap-text">Tap to open</p>
+    </div>
+  </div>
+
+  <!-- شاشة انيميشن الورد -->
+  <div id="flower-screen" class="screen">
+    <div class="flower-bloom" id="flower-bloom">🌸</div>
+  </div>
+
+  <!-- الشاشة الرئيسية (الكاسيت والمحتوى) -->
+  <div id="main-screen" class="screen">
+    <div class="container">
+      
+      <!-- الكاسيت وقائمة الأغاني -->
+      <div class="cassette-card">
+        <div class="header-tag">FOR SAM . FROM ALEX</div>
+        <h1>Songs for you</h1>
+        
+        <div class="cassette-tape">
+          <div class="reel reel-left"></div>
+          <div class="reel reel-right"></div>
+        </div>
+
+        <div class="playlist">
+          <div class="track" onclick="playTrack('Perfect - Ed Sheeran')">
+            <span class="num">01</span>
+            <div class="info">
+              <span class="title">Perfect</span>
+              <span class="artist">Ed Sheeran</span>
+            </div>
+            <button class="play-btn">▶</button>
+          </div>
+          
+          <div class="track" onclick="playTrack('All of Me - John Legend')">
+            <span class="num">02</span>
+            <div class="info">
+              <span class="title">All of Me</span>
+              <span class="artist">John Legend</span>
+            </div>
+            <button class="play-btn">▶</button>
+          </div>
+        </div>
+        
+        <div class="status-bar" id="status-bar">Playing: All of Me</div>
+      </div>
+
+      <!-- الملاحظة الجانبية -->
+      <div class="liner-note">
+        <span class="note-label">LINER NOTE</span>
+        <h3>Hey you,</h3>
+        <p>I made you a mixtape — the cassette kind, not a CD player. Side A is us laughing. Side B is me missing you already.</p>
+        <p class="instruction">Press play.<br>Alex</p>
+        <button class="finish-btn">FINISH MIXTAPE</button>
+      </div>
+
+    </div>
+
+    <!-- الشريط الجانبي (More menu) -->
+    <div class="sidebar" id="sidebar">
+      <div class="widget voice-note">
+        <h4>A letter for you</h4>
+        <p>A small soundtrack for a moment worth keeping.</p>
+        <audio controls src=""></audio>
+      </div>
+
+      <div class="widget bouquet">
+        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=300" alt="Bouquet">
+      </div>
+
+      <div class="widget spotify-player">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kgx22qN0fTz8g-Ed1x7N" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+
+      <div class="widget youtube-player">
+        <iframe width="100%" height="150" src="https://www.youtube.com/embed/450p7goxZqg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- زر فتح الشريط الجانبي -->
+    <button class="toggle-btn" id="toggle-btn">💖 There's more here</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
